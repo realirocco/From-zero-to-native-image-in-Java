@@ -1,1 +1,1 @@
-# GVM-native-example
+# From zero to native image in Java
