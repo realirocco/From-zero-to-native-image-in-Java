@@ -1,0 +1,13 @@
+version: '3'
+services:
+  graalvm:
+    build: .
+    image: graalvm:1.0
+    container_name: graalvm-ctc
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./fibonacci:/app/fibonacci
+      - ./filecount:/app/filecount
+      - ./sort:/app/sort
+      - ./maven:/root/.m2/repository
