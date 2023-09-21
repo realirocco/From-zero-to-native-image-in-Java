@@ -1,7 +1,7 @@
 FROM ubuntu:23.04
 
 # Install dependencies
-RUN apt-get update && apt-get -y upgrade && apt-get -y install wget build-essential
+RUN apt-get update && apt-get -y upgrade && apt-get -y install wget build-essential zlib1g-dev
 
 # Download and install GraalVM
 RUN wget https://download.oracle.com/graalvm/20/latest/graalvm-jdk-20_linux-x64_bin.tar.gz -O graalvm.tar.gz && \
