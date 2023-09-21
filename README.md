@@ -20,6 +20,7 @@
 ### Prerequisiti:
 - installazione di Docker
 - installazione di docker-compose
+- installazione di jmeter (per eseguire test di carico su web-app)
 
 ### Test and benchmark:
 1. Clona il repository
@@ -62,4 +63,12 @@ mvn -Pnative native:compile [-DbuildArgs="options"]
 
 Eseguendo il comando sopra verranno generati sia il jar eseguibile che l'applicazione nativa.
 
+#### spring-demo.jmx
 
+In questo repo è disponibile un plan jmeter per eseguire un test di carico sulla web-app.
+Per eseguire il test puoi usare questo comando
+```
+jmeter -n -t spring-demo.jmx -JTHREADS=10 -JLIMIT=2000 -l report.csv
+```
+il comando sopra avvierà un test di carico usando 10 threads, ognuno dei quali eseguira 2000 chiamate al servizio.
+Le chiamate e il rispettivo esito saranno registrate su un file `.csv` che si chiama `report.csv` 
