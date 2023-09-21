@@ -45,3 +45,21 @@ calcola la sequenza di Fibonacci con il numero 10 e ci mostra il tempo di esecuz
 - ```java -jar ./target/fibonacci-1.0-jar-with-dependencies.jar -n 100 -l```
 
 per valutare e confrontare i tempi di esecuzione. Prosegui in autonomia con altri numeri.
+
+#### spring-demo
+
+Applicazione spring-boot semplicissima con un solo endpoiny (`/hello/{name}`).
+Ha come sola dipendenza `spring-boot-starter-web:3.1.4`.
+Per eseguire il build dell'applicazione sono disponibili `native-maven-plugin` o `spring-boot-maven-plugin` a seconda che si voglia un'app nativa o un jar eseguibile.
+
+Per generare l'app nativa lanciare il seguente comando
+
+```
+mvn -Pnative native:compile [-DbuildArgs="options"]
+```
+`-DbuildArgs` è un parametro opzionale utile per passare parametri al tool `native-image` nel caso si voglia scegliere un garbage collector diverso da quello di default o si voglia definire la dimenzione massima dell'heap (per maggiori informazioni rimndiamo alla [documentazione ufficiale di graalvm](https://www.graalvm.org/22.0/reference-manual/native-image/Options/)
+
+
+Eseguendo il comando sopra verranno generati sia il jar eseguibile che l'applicazione nativa.
+
+
