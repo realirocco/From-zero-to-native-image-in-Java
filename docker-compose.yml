@@ -7,7 +7,11 @@ services:
     stdin_open: true
     tty: true
     volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
       - ./fibonacci:/app/fibonacci
       - ./filecount:/app/filecount
       - ./sort:/app/sort
+      - ./spring-demo:/app/spring-demo
       - ./maven:/root/.m2/repository
+    ports:
+      - 8080:8080
