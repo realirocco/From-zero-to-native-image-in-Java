@@ -1,5 +1,10 @@
 # From zero to native image in Java
 
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
+	![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
+![Apache Maven](https://img.shields.io/badge/Apache%20Maven-C71A36?style=for-the-badge&logo=Apache%20Maven&logoColor=white)
+
 
 ### Contenuto del repo:
 ```
@@ -12,15 +17,21 @@
 ├── filecount (demo Java)
 │   ├── pom.xml
 │   ├── src
-└── sort (demo Java)
-    ├── pom.xml
-    ├── src
+├── sort (demo Java)
+│   ├── pom.xml
+│   ├── src
+├── spring-demo (demo Java Spring)
+│   ├── mvnw
+│   ├── mvnw.cmd
+│   ├── pom.xml
+│   └── src
+└── spring-demo.jmx (configurazione JMeter per test di carico)
 ```
 
 ### Prerequisiti:
 - installazione di Docker
 - installazione di docker-compose
-- installazione di jmeter (per eseguire test di carico su web-app)
+- installazione Apache JMeter (per eseguire test di carico su web-app)
 
 ### Test and benchmark:
 1. Clona il repository
@@ -47,9 +58,15 @@ calcola la sequenza di Fibonacci con il numero 10 e ci mostra il tempo di esecuz
 
 per valutare e confrontare i tempi di esecuzione. Prosegui in autonomia con altri numeri.
 
+#### Filecount:
+Applicazione che dato un '*path*' calcola il numero di file in esso contenuti e la loro grandezza totale. Come per l'applicazione ***fibonacci*** effettua la compilazione ed esegui l'applicazione passando come unico parametro un path di sistema, valido.
+
+#### Sort:
+Applicazione che genera un array di ***n*** numeri (parametro spcificabile all'avvio dell'applicazione) completamente disordinato e successivamente ordina gli elementi con l'algoritmo: *bubble-sort*. Come per l'applicazione ***fibonacci*** effettua la compilazione con ```b-native``` e successivamente esegui: ```./target/sort -h``` per consultare la lista dei parametri ammessi nell'esecuzione.
+
 #### spring-demo
 
-Applicazione spring-boot semplicissima con un solo endpoiny (`/hello/{name}`).
+Applicazione spring-boot semplicissima con un solo endpoint (`/hello/{name}`).
 Ha come sola dipendenza `spring-boot-starter-web:3.1.4`.
 Per eseguire il build dell'applicazione sono disponibili `native-maven-plugin` o `spring-boot-maven-plugin` a seconda che si voglia un'app nativa o un jar eseguibile.
 
@@ -58,7 +75,7 @@ Per generare l'app nativa lanciare il seguente comando
 ```
 mvn -Pnative native:compile [-DbuildArgs="options"]
 ```
-`-DbuildArgs` è un parametro opzionale utile per passare parametri al tool `native-image` nel caso si voglia scegliere un garbage collector diverso da quello di default o si voglia definire la dimenzione massima dell'heap (per maggiori informazioni rimndiamo alla [documentazione ufficiale di graalvm](https://www.graalvm.org/22.0/reference-manual/native-image/Options/)
+`-DbuildArgs` è un parametro opzionale utile per passare parametri al tool `native-image` nel caso si voglia scegliere un garbage collector diverso da quello di default o si voglia definire la dimenzione massima dell'heap (per maggiori informazioni rimadiamo alla [documentazione ufficiale di graalvm](https://www.graalvm.org/22.0/reference-manual/native-image/Options/)
 
 
 Eseguendo il comando sopra verranno generati sia il jar eseguibile che l'applicazione nativa.
