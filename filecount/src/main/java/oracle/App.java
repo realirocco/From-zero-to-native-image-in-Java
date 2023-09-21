@@ -53,7 +53,7 @@ public final class App {
      * @param args The arguments of the program.
      */
     public static void main(String[] args) throws Exception {
-
+        long start = System.currentTimeMillis();
         // Set a default root directory, if one is not passed in
 		String root = ".";
 		if (args.length > 0) {
@@ -68,5 +68,6 @@ public final class App {
             + count.getCount()
             + " files, total size = "
             + size);
+            System.out.println(String.format("Filecount execution time: %sms", System.currentTimeMillis() - start));
     }
 }
