@@ -94,7 +94,7 @@ Le chiamate e il rispettivo esito saranno registrate su un file `.csv` che si ch
 
 | Nome  | Linkedin  |
 |:----------|:----------|
-| Rocco Reali    |   ![https://www.linkedin.com/in/realirocco/](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)  |
-| Carmine Paternoster    |   ![https://www.linkedin.com/in/carmine-paternoster-b5417794/](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)  |
+| Carmine Paternoster | [![](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/carmine-paternoster-b5417794) |
+| Rocco Reali | [![](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/realirocco) |
 
 
