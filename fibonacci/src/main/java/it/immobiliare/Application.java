@@ -13,7 +13,7 @@ public class Application {
     }
 
     private void execute(String[] args) {
-        long start = System.currentTimeMillis();
+        //long start = System.currentTimeMillis();
         try {
             CommandLineParser parser = new DefaultParser();
             Options parameter=this.getOptions();
@@ -36,7 +36,7 @@ public class Application {
         } catch (ParseException pex) {
             System.out.println("Unknow params or arg");
         }
-        System.out.println(String.format("Fibonacci execution time: %sms", System.currentTimeMillis() - start));
+        //System.out.println(String.format("Fibonacci execution time: %sms", System.currentTimeMillis() - start));
     }
 
     private void printHelp(Options parameter){
